@@ -33,55 +33,55 @@ and so on p[6]
 
 * roulette wheel take scumulative prob. value for individual chromosomes
 
-*c[0] = 0
-*c[1]  = 0.1254
-*c[2] = p[1]+p[2]= 0.2710
-*c[3] = 0.4118
-*c[4] = 0.6639
-*c[5] = 0.7882
-*c[6] = p[1] + ...p[6] = 1.0
+* c[0] = 0
+* c[1]  = 0.1254
+* c[2] = p[1]+p[2]= 0.2710
+* c[3] = 0.4118
+* c[4] = 0.6639
+* c[5] = 0.7882
+* c[6] = p[1] + ...p[6] = 1.0
 
 ### step 6 : next we generate random number R in the range 0-1 as follows:
 
-*R[1] = 0.201
-*R[2] = 0.284
-*R[3] = 0.099
-*R[4] = 0.822
-*R[5] = 0.398
-*R[6] = 0.501
+* R[1] = 0.201
+* R[2] = 0.284
+* R[3] = 0.099
+* R[4] = 0.822
+* R[5] = 0.398
+* R[6] = 0.501
 
 * if R[1] lies bet. c[1] and c[2]  then select chromosome[2] as a chromosome in
  the new pop for the next gen. as it is a higher value.
 
-*new_chromosome[1] = chromosome[2]
-*new_chromosome[2] = chromosome[3]
-*new_chromosome[3] = chromosome[1]
-*new_chromosome[4] = chromosome[6]
-*new_chromosome[5] = chromosome[3]
-*new_chromosome[6] = chromosome[4]
+* new_chromosome[1] = chromosome[2]
+* new_chromosome[2] = chromosome[3]
+* new_chromosome[3] = chromosome[1]
+* new_chromosome[4] = chromosome[6]
+* new_chromosome[5] = chromosome[3]
+* new_chromosome[6] = chromosome[4]
 
-*chromosomes in the pop. thus become
-*chromosome[1] = [2;21;18;3]
-*chromosome[2] = [10;4;13;14]
-*chromosome[3] = [12;5;23;8]
-*chromosome[4] = [20;5;17;1]
-*chromosome[5] = [10;4;13;14]
-*chromosome[6] = [20;1;10;6]
+* chromosomes in the pop. thus become
+* chromosome[1] = [2;21;18;3]
+* chromosome[2] = [10;4;13;14]
+* chromosome[3] = [12;5;23;8]
+* chromosome[4] = [20;5;17;1]
+* chromosome[5] = [10;4;13;14]
+* chromosome[6] = [20;1;10;6]
 
 ### step 7 : crossover 
 
 * chromosome is controlled using crossover rate(pc = 0.25)
 
-*begin
-*k = 0
-*while(k<pop):
- *R[k] = random(0-1)
- *if(R[k] < pc):
-  *select chromosome[k] as parent
-  *end
- *k +=1
-*end
-*end
+* begin
+* k = 0
+* while(k<pop):
+ * R[k] = random(0-1)
+ * if(R[k] < pc):
+  * select chromosome[k] as parent
+  * end
+ * k +=1
+* end
+* end
 
 * accordingly for R[1],R[4],R[5] parents  are chromosome[1],chromosome[4]
 chromosome[5] selected.
@@ -108,14 +108,14 @@ we selected the random values between 1 to 3
                  = [10;4;13;14]><[2;21;18;3]
                   = [10;4;18;3]
                   
-*hence the new chromosome are:
+* hence the new chromosome are:
 
-*chromosome[1] = [2;5;17;1]
-*chromosome[2] = [10;4;13;14]
-*chromosome[3] = [12;5;23;8]
-*chromosome[4] = [20;4;13;14]
-*chromosome[5] = [10;4;18;3]
-*chromosome[6] = [20;1;10;6]
+* chromosome[1] = [2;5;17;1]
+* chromosome[2] = [10;4;13;14]
+* chromosome[3] = [12;5;23;8]
+* chromosome[4] = [20;4;13;14]
+* chromosome[5] = [10;4;18;3]
+* chromosome[6] = [20;1;10;6]
 
 ### step 9 :mutation is done by replacing the gene at a random position with
  a new value. we must compute the total length of gen.
@@ -137,12 +137,12 @@ between 0-30 .
 * suppose generated random number are 2 and 5 then chromosome composition
 after mutation are :
 
-*chromosome[1] = [2;5;17;1]
-*chromosome[2] = [10;4;13;14]
-*chromosome[3] = [12;5;18;3]
-*chromosome[4] = [20;4;13;14]
-*chromosome[5] = [10;5;18;3]
-*chromosome[6] = [20;1;10;6]
+* chromosome[1] = [2;5;17;1]
+* chromosome[2] = [10;4;13;14]
+* chromosome[3] = [12;5;18;3]
+* chromosome[4] = [20;4;13;14]
+* chromosome[5] = [10;5;18;3]
+* chromosome[6] = [20;1;10;6]
 
 * these new chromosomes will undergo
 chromosomes such as evaluation selction,crossover,mutation and at the end it produce
